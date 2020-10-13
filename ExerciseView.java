@@ -44,7 +44,6 @@ public class ExerciseView {
     
   }
   
-
   
   //returns the name the user entered
   public String getNameInput() {
@@ -52,18 +51,23 @@ public class ExerciseView {
   }
   
   //return the reps the user entered
-  public int getReps() {
+  public int getRepVolume() {
     
     String input = this.reps.getText();
     int value = 0;
+    int frequency=0;
     
     if(input.equals("")) {
       value = 0;
     }
     else {
       value = Integer.parseInt(this.reps.getText());
+      frequency = Integer.parseInt(this.freq.getText());
     }
-    return value;
+    
+    int repVolume = value * frequency;
+    
+    return repVolume;
   }
   
   //return the total number of sets performed by that exercise
